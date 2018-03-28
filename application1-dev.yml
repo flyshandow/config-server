@@ -2,3 +2,8 @@ server:
   port: 8082
   servlet:
     context-path: /config
+jdbc:
+  url: http://mysql:3006
+  driver: class.mysql.jdbc
+  user: feh
+  password: 3333
