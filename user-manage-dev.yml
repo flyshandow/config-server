@@ -1,6 +1,10 @@
 server:
+  port: 8300
   servlet:
-    context-path: /config
+    context-path: ${spring.application.name}
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
 jdbc:
   url: http://mysql:3006
   driver: class.mysql.jdbc
