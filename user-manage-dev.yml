@@ -1,7 +1,7 @@
 server:
   port: 8300
   servlet:
-    context-path: ${spring.application.name}
+    context-path: /${spring.application.name}
 eureka:
   instance:
     instance-id: ${spring.application.name}:${server.port}
