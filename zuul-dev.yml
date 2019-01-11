@@ -3,3 +3,8 @@ spring:
     name: zuul
 server:
   port: 9401
+  servlet:
+    context: /{spring.application.name}
+euraka:
+  instance:
+    service-id: {spring.applaction.name}:{server.port}
