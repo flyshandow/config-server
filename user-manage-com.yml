@@ -3,7 +3,15 @@ server:
     context-path: /${spring.application.name}
 eureka:
   instance:
-    instance-id: ${spring.application.name}:${server.port}
+    #默认服务失效时间为90秒，如果改时间内没有注册中心没有收到该实例的心跳，则可以剔除该服务实例
+    lease-expiration-duration-in-seconds: 90
+    #默认心跳时间30秒，每30秒向注册中心发送一次心跳。
+    lease-renewal-interval-in-seconds: 30
+    app-group-name: user
+    hostname: feh
+    prefer-ip-address: true
+    ip-address: 192.168.199.129
+    instance-id: ${eureka.instance.hostname}-${spring.application.name}:${server.port}
 jdbc:
   url: http://mysql:3006
   driver: class.mysql.jdbc
